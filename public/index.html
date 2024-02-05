@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script defer src="./UI/JavaScript/index.js" type="text/JavaScript"></script>
+    <link href="./UI/Styles/index.css" rel="stylesheet" type="text/stylesheet" />
+    <title>Face Recognition</title>
+  </head>
+  <body>
+    <!--onload="onLoadBody(); return null;"-->
+    <div id="header"></div>
+    <div id="divBody">
+      <div id="divDataInput">
+        <div>
+          <input type="text" id="localImagesFolderPath" />
+        </div>
+        <input
+          type="file"
+          id="imageUpload"
+          onchange="onAddedImagePath(this)"
+          accept="image/png, image/gif, image/jpeg"
+        />
+        <button onclick="onSubmitSelectedImage()">Submit</button>
+      </div>
+      <div id="divDataOutput">
+        <div id="divDataOutputDisplay">
+          <canvas id="mycanvas" width="300" height="300">
+          </canvas>
+        </div>
+        <div id="divDataReferencesDisplay"></div>
+      </div>
+    </div>
+    <!-- <div id="divPopup">
+      <h1 id="textLoadingPopup">Loading</h1>
+    </div> -->
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Convert to Base64</title>
+</head>
+<body>
+    <h1>Image Upload and Convert to Base64</h1>
+    
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadAndConvert()">Upload and Convert</button>
+
+    <div id="resultContainer">
+        <h2>Base64 Result:</h2>
+        <textarea id="base64Result" rows="10" cols="50"></textarea>
+    </div>
+
+    <script>
+        function isImage(file) {
+            // Check if the file type is an image
+            return file.type.startsWith('image/');
+        }
+
+        function uploadAndConvert() {
+            // Get the input element
+            const inputElement = document.getElementById('imageInput');
+
+            // Get the selected file
+            const file = inputElement.files[0];
+
+            // Check if a file is selected
+            if (file) {
+                // Check if the selected file is an image
+                if (isImage(file)) {
+                    // Read the file as a data URL
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        // Display the base64 result
+                        const base64Result = document.getElementById('base64Result');
+                        base64Result.value = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('Please upload an image file.');
+                }
+            } else {
+                alert('Please select a file.');
+            }
+        }
+    </script>
+</body>
+</html> -->
